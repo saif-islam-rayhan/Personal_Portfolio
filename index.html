@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Saif Islam Rayhan | AI & Software Engineer</title>
+    <title>Md.Rayhan | AI & Software Engineer</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
@@ -70,19 +70,25 @@
 
         .container {
             width: 100%;
-            max-width: 1280px;
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 0 24px;
+            padding: 0 20px;
         }
 
-        /* Theme Toggle */
-        .theme-switcher {
+        /* Floating Buttons */
+        .floating-buttons {
             position: fixed;
             bottom: 32px;
             right: 32px;
             z-index: 1001;
-            width: 56px;
-            height: 56px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .theme-switcher, .back-to-top {
+            width: 50px;
+            height: 50px;
             background: var(--gradient);
             border-radius: 50%;
             display: flex;
@@ -92,16 +98,21 @@
             box-shadow: var(--shadow);
             transition: var(--transition);
             border: none;
+            color: var(--white);
+            font-size: 1.2rem;
         }
 
-        .theme-switcher:hover {
+        .theme-switcher:hover, .back-to-top:hover {
             transform: scale(1.1) rotate(15deg);
         }
 
-        .theme-switcher i {
-            color: var(--white);
-            font-size: 1.5rem;
-            transition: var(--transition);
+        .back-to-top {
+            background: var(--success);
+            display: none;
+        }
+
+        .back-to-top.visible {
+            display: flex;
         }
 
         /* Header */
@@ -113,7 +124,7 @@
             z-index: 1000;
             background-color: rgba(15, 23, 42, 0.95);
             backdrop-filter: blur(20px);
-            padding: 20px 0;
+            padding: 15px 0;
             border-bottom: 1px solid rgba(255, 255, 255, 0.05);
             transition: var(--transition);
         }
@@ -131,13 +142,13 @@
 
         .logo {
             font-family: 'Poppins', sans-serif;
-            font-size: 2rem;
+            font-size: 1.8rem;
             font-weight: 800;
             color: var(--white);
             text-decoration: none;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
             position: relative;
         }
 
@@ -150,8 +161,8 @@
             position: absolute;
             bottom: -5px;
             left: 0;
-            width: 40px;
-            height: 4px;
+            width: 30px;
+            height: 3px;
             background: var(--gradient);
             border-radius: 2px;
         }
@@ -164,17 +175,18 @@
 
         .nav-links {
             display: flex;
-            gap: 40px;
+            gap: 30px;
+            align-items: center;
         }
 
         .nav-links a {
             color: var(--gray-light);
             text-decoration: none;
             font-weight: 600;
-            font-size: 1rem;
+            font-size: 0.95rem;
             transition: var(--transition);
             position: relative;
-            padding: 8px 0;
+            padding: 6px 0;
         }
 
         .nav-links a:hover, .nav-links a.active {
@@ -204,13 +216,14 @@
         .book-meeting-btn {
             background: var(--gradient);
             color: var(--white);
-            padding: 12px 28px;
+            padding: 10px 20px;
             border-radius: 50px;
             font-weight: 600;
             text-decoration: none;
             transition: var(--transition);
             border: none;
             cursor: pointer;
+            font-size: 0.9rem;
         }
 
         .book-meeting-btn:hover {
@@ -231,11 +244,12 @@
             color: var(--light);
         }
 
-        /* Hero Section */
+        /* Hero Section - More Compact */
         .hero {
-            padding: 200px 0 150px;
+            padding: 140px 0 60px; /* Reduced padding */
             position: relative;
             overflow: hidden;
+            min-height: calc(100vh - 80px); /* Adjusted height */
         }
 
         .hero-bg {
@@ -251,7 +265,7 @@
         .hero-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 80px;
+            gap: 40px; /* Reduced gap */
             align-items: center;
         }
 
@@ -265,19 +279,20 @@
             gap: 8px;
             background: rgba(99, 102, 241, 0.1);
             color: var(--primary);
-            padding: 10px 20px;
+            padding: 6px 15px;
             border-radius: 50px;
             font-weight: 600;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             border: 1px solid rgba(99, 102, 241, 0.2);
+            font-size: 0.85rem;
         }
 
         .hero h1 {
             font-family: 'Poppins', sans-serif;
-            font-size: 4rem;
+            font-size: 2.5rem; /* Smaller font */
             font-weight: 800;
             line-height: 1.1;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             background: linear-gradient(to right, var(--white), var(--primary-light));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -290,37 +305,38 @@
         }
 
         .hero-subtitle {
-            font-size: 1.8rem;
+            font-size: 1.3rem;
             font-weight: 600;
             color: var(--gray-light);
-            margin-bottom: 30px;
+            margin-bottom: 20px;
         }
 
         .hero-description {
-            font-size: 1.2rem;
+            font-size: 0.95rem; /* Smaller text */
             color: var(--gray);
-            margin-bottom: 40px;
-            max-width: 600px;
+            margin-bottom: 25px; /* Reduced margin */
+            max-width: 500px;
+            line-height: 1.6;
         }
 
         .hero-actions {
             display: flex;
-            gap: 20px;
-            margin-bottom: 60px;
+            gap: 15px;
+            margin-bottom: 30px; /* Reduced margin */
         }
 
         .btn {
             display: inline-flex;
             align-items: center;
-            gap: 12px;
-            padding: 18px 40px;
+            gap: 10px;
+            padding: 12px 25px; /* Smaller buttons */
             border-radius: 50px;
             font-weight: 600;
             text-decoration: none;
             transition: var(--transition);
             border: none;
             cursor: pointer;
-            font-size: 1.1rem;
+            font-size: 0.9rem;
         }
 
         .btn-primary {
@@ -329,8 +345,8 @@
         }
 
         .btn-primary:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(99, 102, 241, 0.4);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(99, 102, 241, 0.4);
         }
 
         .btn-outline {
@@ -346,14 +362,14 @@
         .btn-outline:hover {
             background: var(--primary);
             color: var(--white);
-            transform: translateY(-5px);
+            transform: translateY(-3px);
         }
 
         .hero-stats {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 30px;
-            padding-top: 50px;
+            gap: 15px; /* Reduced gap */
+            padding-top: 25px; /* Reduced padding */
             border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
 
@@ -366,20 +382,20 @@
         }
 
         .stat-number {
-            font-size: 3rem;
+            font-size: 1.8rem; /* Smaller numbers */
             font-weight: 800;
             background: var(--gradient);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             line-height: 1;
-            margin-bottom: 10px;
+            margin-bottom: 5px;
         }
 
         .stat-label {
-            font-size: 0.9rem;
+            font-size: 0.7rem; /* Smaller labels */
             color: var(--gray);
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 0.5px;
         }
 
         .hero-image {
@@ -391,8 +407,8 @@
 
         .profile-container {
             position: relative;
-            width: 400px;
-            height: 400px;
+            width: 280px; /* Smaller image */
+            height: 280px;
         }
 
         .profile-image {
@@ -400,7 +416,7 @@
             height: 100%;
             border-radius: 50%;
             object-fit: cover;
-            border: 8px solid rgba(99, 102, 241, 0.2);
+            border: 6px solid rgba(99, 102, 241, 0.2);
             box-shadow: var(--shadow);
             position: relative;
             z-index: 2;
@@ -408,32 +424,32 @@
 
         .profile-bg {
             position: absolute;
-            top: -20px;
-            left: -20px;
-            right: -20px;
-            bottom: -20px;
+            top: -15px;
+            left: -15px;
+            right: -15px;
+            bottom: -15px;
             background: var(--gradient);
             border-radius: 50%;
-            filter: blur(20px);
+            filter: blur(15px);
             opacity: 0.3;
             z-index: 1;
         }
 
         /* Section Common */
         .section-padding {
-            padding: 120px 0;
+            padding: 80px 0;
         }
 
         .section-title {
             text-align: center;
-            margin-bottom: 80px;
+            margin-bottom: 50px;
         }
 
         .section-title h2 {
             font-family: 'Poppins', sans-serif;
-            font-size: 3.5rem;
+            font-size: 2.5rem;
             font-weight: 800;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             background: var(--gradient);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -441,8 +457,8 @@
 
         .section-title p {
             color: var(--gray);
-            font-size: 1.3rem;
-            max-width: 700px;
+            font-size: 1rem;
+            max-width: 600px;
             margin: 0 auto;
         }
 
@@ -454,13 +470,13 @@
         .project-filters {
             display: flex;
             justify-content: center;
-            gap: 15px;
-            margin-bottom: 60px;
+            gap: 10px;
+            margin-bottom: 40px;
             flex-wrap: wrap;
         }
 
         .filter-btn {
-            padding: 14px 32px;
+            padding: 10px 20px;
             background-color: var(--card-bg);
             color: var(--gray);
             border: 1px solid var(--border);
@@ -468,10 +484,10 @@
             font-weight: 600;
             cursor: pointer;
             transition: var(--transition);
-            font-size: 1rem;
+            font-size: 0.9rem;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
         }
 
         .filter-btn:hover, .filter-btn.active {
@@ -482,18 +498,18 @@
         }
 
         .filter-btn i {
-            font-size: 1.1rem;
+            font-size: 0.9rem;
         }
 
         .project-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
-            gap: 40px;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
         }
 
         .project-card {
             background-color: var(--card-bg);
-            border-radius: var(--radius);
+            border-radius: 12px;
             overflow: hidden;
             border: 1px solid var(--border);
             transition: var(--transition);
@@ -502,49 +518,49 @@
         }
 
         .project-card:hover {
-            transform: translateY(-15px);
+            transform: translateY(-10px);
             border-color: var(--primary);
             box-shadow: var(--shadow);
         }
 
         .project-header {
-            padding: 30px 30px 20px;
+            padding: 20px 20px 15px;
             position: relative;
         }
 
         .project-badge {
             position: absolute;
-            top: 30px;
-            right: 30px;
+            top: 20px;
+            right: 20px;
             background: var(--gradient);
             color: var(--white);
-            padding: 8px 20px;
+            padding: 5px 12px;
             border-radius: 50px;
-            font-size: 0.8rem;
+            font-size: 0.7rem;
             font-weight: 600;
         }
 
         .project-icon {
-            width: 70px;
-            height: 70px;
+            width: 50px;
+            height: 50px;
             background: rgba(99, 102, 241, 0.1);
-            border-radius: 20px;
+            border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 25px;
+            margin-bottom: 15px;
             color: var(--primary);
-            font-size: 1.8rem;
+            font-size: 1.4rem;
         }
 
         .project-content {
-            padding: 0 30px 30px;
+            padding: 0 20px 20px;
         }
 
         .project-title {
-            font-size: 1.6rem;
+            font-size: 1.3rem;
             font-weight: 700;
-            margin-bottom: 15px;
+            margin-bottom: 10px;
             color: var(--light);
             line-height: 1.3;
         }
@@ -555,37 +571,37 @@
 
         .project-description {
             color: var(--gray);
-            font-size: 1rem;
-            margin-bottom: 25px;
-            line-height: 1.8;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+            line-height: 1.6;
         }
 
         .project-tech {
             display: flex;
             flex-wrap: wrap;
-            gap: 10px;
-            margin-bottom: 30px;
+            gap: 8px;
+            margin-bottom: 20px;
         }
 
         .tech-tag {
             background: rgba(99, 102, 241, 0.1);
             color: var(--primary);
-            padding: 8px 16px;
+            padding: 6px 12px;
             border-radius: 50px;
-            font-size: 0.85rem;
+            font-size: 0.75rem;
             font-weight: 500;
             display: flex;
             align-items: center;
-            gap: 6px;
+            gap: 5px;
         }
 
         .tech-tag i {
-            font-size: 0.9rem;
+            font-size: 0.8rem;
         }
 
         .project-links {
             display: flex;
-            gap: 15px;
+            gap: 10px;
         }
 
         .project-link {
@@ -593,14 +609,14 @@
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            gap: 10px;
+            gap: 8px;
             color: var(--white);
             text-decoration: none;
             font-weight: 600;
-            font-size: 1rem;
+            font-size: 0.85rem;
             transition: var(--transition);
-            padding: 14px;
-            border-radius: 12px;
+            padding: 10px;
+            border-radius: 8px;
             background: var(--gradient);
             border: none;
             cursor: pointer;
@@ -615,9 +631,9 @@
         .booking-section {
             position: relative;
             background: var(--dark-light);
-            border-radius: var(--radius);
-            padding: 80px;
-            margin-top: 60px;
+            border-radius: 12px;
+            padding: 40px;
+            margin-top: 40px;
             overflow: hidden;
         }
 
@@ -643,15 +659,15 @@
 
         .booking-header {
             text-align: center;
-            margin-bottom: 60px;
+            margin-bottom: 40px;
         }
 
         .booking-header h2 {
             font-family: 'Poppins', sans-serif;
-            font-size: 3rem;
+            font-size: 2.2rem;
             font-weight: 800;
             color: var(--white);
-            margin-bottom: 15px;
+            margin-bottom: 10px;
         }
 
         .light-mode .booking-header h2 {
@@ -660,17 +676,17 @@
 
         .booking-header p {
             color: var(--gray);
-            font-size: 1.2rem;
-            max-width: 600px;
+            font-size: 1rem;
+            max-width: 500px;
             margin: 0 auto;
         }
 
         .booking-form-container {
             background: var(--card-bg);
-            border-radius: var(--radius);
-            padding: 60px;
+            border-radius: 12px;
+            padding: 40px;
             border: 1px solid var(--border);
-            max-width: 800px;
+            max-width: 700px;
             margin: 0 auto;
         }
 
@@ -689,15 +705,15 @@
         }
 
         .form-group {
-            margin-bottom: 30px;
+            margin-bottom: 20px;
         }
 
         .form-label {
             display: block;
-            margin-bottom: 12px;
+            margin-bottom: 8px;
             font-weight: 600;
             color: var(--light);
-            font-size: 1.1rem;
+            font-size: 0.95rem;
         }
 
         .light-mode .form-label {
@@ -706,13 +722,13 @@
 
         .form-control {
             width: 100%;
-            padding: 18px 24px;
+            padding: 14px 18px;
             background: var(--dark);
             border: 2px solid var(--border);
-            border-radius: 12px;
+            border-radius: 8px;
             color: var(--light);
             font-family: 'Inter', sans-serif;
-            font-size: 1rem;
+            font-size: 0.9rem;
             transition: var(--transition);
         }
 
@@ -723,27 +739,27 @@
         .form-control:focus {
             outline: none;
             border-color: var(--primary);
-            box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.2);
+            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
         }
 
         .form-row {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 30px;
+            gap: 20px;
         }
 
         .form-actions {
             display: flex;
-            gap: 20px;
-            margin-top: 50px;
+            gap: 15px;
+            margin-top: 30px;
         }
 
         .form-btn {
             flex: 1;
-            padding: 18px;
-            border-radius: 12px;
+            padding: 14px;
+            border-radius: 8px;
             font-weight: 600;
-            font-size: 1.1rem;
+            font-size: 0.95rem;
             cursor: pointer;
             transition: var(--transition);
             border: none;
@@ -783,7 +799,7 @@
         .booking-success {
             display: none;
             text-align: center;
-            padding: 60px 40px;
+            padding: 40px 20px;
         }
 
         .booking-success.active {
@@ -792,30 +808,30 @@
         }
 
         .success-icon {
-            width: 120px;
-            height: 120px;
+            width: 80px;
+            height: 80px;
             background: var(--success);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 40px;
+            margin: 0 auto 30px;
             color: var(--white);
-            font-size: 3.5rem;
+            font-size: 2.5rem;
             animation: bounce 1s ease;
         }
 
         @keyframes bounce {
             0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
-            40% {transform: translateY(-30px);}
-            60% {transform: translateY(-15px);}
+            40% {transform: translateY(-20px);}
+            60% {transform: translateY(-10px);}
         }
 
         .booking-success h3 {
-            font-size: 2.5rem;
+            font-size: 1.8rem;
             font-weight: 800;
             color: var(--light);
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
 
         .light-mode .booking-success h3 {
@@ -824,88 +840,88 @@
 
         .booking-success p {
             color: var(--gray);
-            margin-bottom: 30px;
-            font-size: 1.2rem;
-            line-height: 1.8;
+            margin-bottom: 20px;
+            font-size: 1rem;
+            line-height: 1.6;
         }
 
         .success-actions {
             display: flex;
-            gap: 20px;
+            gap: 15px;
             justify-content: center;
-            margin-top: 40px;
+            margin-top: 30px;
         }
 
         /* Social Stats */
         .stats-section {
-            padding: 100px 0;
+            padding: 60px 0;
         }
 
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 30px;
+            gap: 20px;
         }
 
         .stat-card {
             text-align: center;
-            padding: 50px 30px;
+            padding: 30px 20px;
             background: var(--card-bg);
-            border-radius: var(--radius);
+            border-radius: 12px;
             border: 1px solid var(--border);
             transition: var(--transition);
         }
 
         .stat-card:hover {
             border-color: var(--primary);
-            transform: translateY(-10px);
+            transform: translateY(-8px);
         }
 
         .stat-icon {
-            width: 80px;
-            height: 80px;
+            width: 60px;
+            height: 60px;
             background: var(--gradient);
-            border-radius: 20px;
+            border-radius: 15px;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 25px;
+            margin: 0 auto 20px;
             color: var(--white);
-            font-size: 2rem;
+            font-size: 1.5rem;
         }
 
         .stat-card h3 {
-            font-size: 3.5rem;
+            font-size: 2.5rem;
             font-weight: 800;
             background: var(--gradient);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            margin-bottom: 15px;
+            margin-bottom: 10px;
         }
 
         .stat-card p {
             color: var(--gray);
-            font-size: 1.2rem;
+            font-size: 1rem;
         }
 
         /* Contact */
         .contact-section {
-            padding: 120px 0;
+            padding: 80px 0;
             background: var(--dark-light);
         }
 
         .contact-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 80px;
+            gap: 50px;
             align-items: start;
         }
 
         .contact-info h3 {
-            font-size: 2.5rem;
+            font-size: 1.8rem;
             font-weight: 800;
             color: var(--light);
-            margin-bottom: 30px;
+            margin-bottom: 20px;
         }
 
         .light-mode .contact-info h3 {
@@ -914,37 +930,37 @@
 
         .contact-info p {
             color: var(--gray);
-            margin-bottom: 40px;
-            font-size: 1.2rem;
-            line-height: 1.8;
+            margin-bottom: 30px;
+            font-size: 1rem;
+            line-height: 1.6;
         }
 
         .contact-details {
             display: flex;
             flex-direction: column;
-            gap: 25px;
+            gap: 20px;
         }
 
         .contact-item {
             display: flex;
             align-items: center;
-            gap: 20px;
+            gap: 15px;
         }
 
         .contact-icon {
-            width: 60px;
-            height: 60px;
+            width: 50px;
+            height: 50px;
             background: rgba(99, 102, 241, 0.1);
-            border-radius: 15px;
+            border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
             color: var(--primary);
-            font-size: 1.5rem;
+            font-size: 1.3rem;
         }
 
         .contact-text h4 {
-            font-size: 1.3rem;
+            font-size: 1.1rem;
             font-weight: 700;
             color: var(--light);
             margin-bottom: 5px;
@@ -957,12 +973,13 @@
         .contact-text p {
             color: var(--gray);
             margin: 0;
+            font-size: 0.9rem;
         }
 
         /* Footer */
         footer {
             background: var(--darker);
-            padding: 80px 0 40px;
+            padding: 50px 0 30px;
             border-top: 1px solid var(--border);
         }
 
@@ -970,12 +987,12 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 50px;
+            margin-bottom: 30px;
         }
 
         .footer-links {
             display: flex;
-            gap: 30px;
+            gap: 20px;
         }
 
         .footer-links a {
@@ -983,6 +1000,7 @@
             text-decoration: none;
             font-weight: 600;
             transition: var(--transition);
+            font-size: 0.9rem;
         }
 
         .footer-links a:hover {
@@ -991,12 +1009,12 @@
 
         .social-links {
             display: flex;
-            gap: 20px;
+            gap: 15px;
         }
 
         .social-link {
-            width: 50px;
-            height: 50px;
+            width: 40px;
+            height: 40px;
             background: var(--card-bg);
             border-radius: 50%;
             display: flex;
@@ -1005,29 +1023,39 @@
             color: var(--gray);
             text-decoration: none;
             transition: var(--transition);
+            font-size: 0.9rem;
         }
 
         .social-link:hover {
             background: var(--gradient);
             color: var(--white);
-            transform: translateY(-5px);
+            transform: translateY(-3px);
         }
 
         .copyright {
             text-align: center;
             color: var(--gray);
-            padding-top: 40px;
+            padding-top: 30px;
             border-top: 1px solid var(--border);
+            font-size: 0.85rem;
         }
 
         /* Responsive */
         @media (max-width: 1200px) {
+            .container {
+                max-width: 960px;
+            }
+            
             .hero h1 {
-                font-size: 3.2rem;
+                font-size: 2.2rem;
             }
             
             .section-title h2 {
-                font-size: 2.8rem;
+                font-size: 2rem;
+            }
+            
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
             }
         }
 
@@ -1035,19 +1063,32 @@
             .hero-content, .contact-grid {
                 grid-template-columns: 1fr;
                 text-align: center;
-                gap: 60px;
+                gap: 40px;
             }
             
-            .hero-stats, .stats-grid {
+            .hero-stats {
                 grid-template-columns: repeat(2, 1fr);
             }
             
             .project-grid {
-                grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
             }
             
             .nav-links {
                 display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: var(--dark);
+                flex-direction: column;
+                padding: 20px;
+                gap: 15px;
+                border-top: 1px solid var(--border);
+            }
+            
+            .nav-links.active {
+                display: flex;
             }
             
             .mobile-menu-btn {
@@ -1055,25 +1096,40 @@
             }
             
             .booking-form-container {
-                padding: 40px;
+                padding: 30px;
+            }
+            
+            .floating-buttons {
+                right: 20px;
+                bottom: 20px;
+            }
+            
+            .theme-switcher, .back-to-top {
+                width: 45px;
+                height: 45px;
+                font-size: 1.1rem;
             }
         }
 
         @media (max-width: 768px) {
             .hero {
-                padding: 160px 0 100px;
+                padding: 120px 0 50px;
             }
             
             .hero h1 {
-                font-size: 2.5rem;
+                font-size: 2rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.2rem;
             }
             
             .section-padding {
-                padding: 80px 0;
+                padding: 60px 0;
             }
             
             .section-title h2 {
-                font-size: 2.2rem;
+                font-size: 1.8rem;
             }
             
             .project-grid {
@@ -1085,20 +1141,26 @@
             }
             
             .booking-section {
-                padding: 40px 20px;
+                padding: 30px 15px;
             }
             
             .profile-container {
-                width: 300px;
-                height: 300px;
+                width: 220px;
+                height: 220px;
+            }
+            
+            .stats-grid, .hero-stats {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+            
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
             }
         }
 
         @media (max-width: 576px) {
-            .hero-stats, .stats-grid {
-                grid-template-columns: 1fr;
-            }
-            
             .form-actions, .success-actions {
                 flex-direction: column;
             }
@@ -1111,26 +1173,47 @@
             .btn {
                 width: 100%;
                 justify-content: center;
+                padding: 12px 20px;
             }
             
             .footer-content {
                 flex-direction: column;
-                gap: 30px;
+                gap: 20px;
                 text-align: center;
             }
             
             .footer-links {
                 flex-direction: column;
-                gap: 15px;
+                gap: 10px;
+            }
+            
+            .social-links {
+                justify-content: center;
+            }
+            
+            .floating-buttons {
+                right: 15px;
+                bottom: 15px;
+            }
+            
+            .theme-switcher, .back-to-top {
+                width: 40px;
+                height: 40px;
+                font-size: 1rem;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Theme Switcher -->
-    <button class="theme-switcher" id="themeSwitcher">
-        <i class="fas fa-moon"></i>
-    </button>
+    <!-- Floating Buttons (Theme Switcher and Back to Top) -->
+    <div class="floating-buttons">
+        <button class="theme-switcher" id="themeSwitcher">
+            <i class="fas fa-moon"></i>
+        </button>
+        <button class="back-to-top" id="backToTop">
+            <i class="fas fa-arrow-up"></i>
+        </button>
+    </div>
 
     <!-- Header -->
     <header>
@@ -1139,7 +1222,7 @@
                 <a href="#" class="logo">
                     <i class="fas fa-robot"></i> Md.<span>Rayhan</span>
                 </a>
-                <div class="nav-links">
+                <div class="nav-links" id="navLinks">
                     <a href="#home" class="active">Home</a>
                     <a href="#projects">Projects</a>
                     <a href="#booking">Book Meeting</a>
@@ -1148,7 +1231,7 @@
                         <i class="fas fa-calendar-alt"></i> Book Meeting
                     </a>
                 </div>
-                <button class="mobile-menu-btn">
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
                     <i class="fas fa-bars"></i>
                 </button>
             </nav>
@@ -1165,7 +1248,7 @@
                         <i class="fas fa-star"></i> AI & Software Engineer
                     </div>
                     <h1>Building Intelligent Solutions That Transform Businesses</h1>
-                    <div class="hero-subtitle">Md. Rayhan</div>
+                    <div class="hero-subtitle">Md.Rayhan</div>
                     <p class="hero-description">
                         I architect cutting-edge AI systems and scalable software solutions that drive innovation and growth. 
                         With expertise in machine learning, computer vision, and full-stack development, I create impactful 
@@ -1202,7 +1285,8 @@
                 </div>
                 <div class="hero-image">
                     <div class="profile-container">
-<img src="WhatsApp Image 2026-01-15 at 08.44.53.jpeg" alt="Md.Rayhan" class="profile-image">                        <div class="profile-bg"></div>
+                        <img src="WhatsApp Image 2026-01-15 at 08.44.53.jpeg" alt="Md.Rayhan" class="profile-image">
+                        <div class="profile-bg"></div>
                     </div>
                 </div>
             </div>
@@ -1244,21 +1328,19 @@
                     <div class="project-content">
                         <h3 class="project-title">AI-Powered Traffic Speed Detection System</h3>
                         <p class="project-description">
-                            Real-time computer vision system using YOLO and DeepSORT for vehicle detection and speed calculation. 
-                            Processes live traffic footage to provide accurate analytics for urban planning and traffic management.
+                            Real-time computer vision system using YOLO and DeepSORT for vehicle detection and speed calculation.
                         </p>
                         <div class="project-tech">
                             <span class="tech-tag"><i class="fab fa-python"></i> Python</span>
                             <span class="tech-tag"><i class="fas fa-eye"></i> OpenCV</span>
                             <span class="tech-tag"><i class="fas fa-bolt"></i> YOLO</span>
-                            <span class="tech-tag"><i class="fas fa-chart-line"></i> DeepSORT</span>
                         </div>
                         <div class="project-links">
                             <a href="https://github.com/saif-islam-rayhan/Traffic-Speed-Detection-System" target="_blank" class="project-link">
-                                <i class="fab fa-github"></i> View Code
+                                <i class="fab fa-github"></i> Code
                             </a>
                             <a href="https://www.youtube.com/watch?v=3_ZU-XEwUiE" target="_blank" class="project-link">
-                                <i class="fab fa-youtube"></i> Live Demo
+                                <i class="fab fa-youtube"></i> Demo
                             </a>
                         </div>
                     </div>
@@ -1275,21 +1357,19 @@
                     <div class="project-content">
                         <h3 class="project-title">Real-Time Emotion Detection AI</h3>
                         <p class="project-description">
-                            Deep learning model that detects and classifies human emotions in real-time using CNN architecture. 
-                            Achieves high accuracy in recognizing 7 basic emotions from facial expressions through webcam feed.
+                            Deep learning model that detects and classifies human emotions in real-time using CNN architecture.
                         </p>
                         <div class="project-tech">
                             <span class="tech-tag"><i class="fab fa-python"></i> Python</span>
                             <span class="tech-tag"><i class="fas fa-network-wired"></i> TensorFlow</span>
                             <span class="tech-tag"><i class="fas fa-eye"></i> OpenCV</span>
-                            <span class="tech-tag"><i class="fas fa-brain"></i> CNN</span>
                         </div>
                         <div class="project-links">
                             <a href="https://github.com/saif-islam-rayhan/Realtime_emotion_detector" target="_blank" class="project-link">
-                                <i class="fab fa-github"></i> View Code
+                                <i class="fab fa-github"></i> Code
                             </a>
                             <a href="https://www.youtube.com/watch?v=JWL5eW-FFws" target="_blank" class="project-link">
-                                <i class="fab fa-youtube"></i> Live Demo
+                                <i class="fab fa-youtube"></i> Demo
                             </a>
                         </div>
                     </div>
@@ -1306,21 +1386,19 @@
                     <div class="project-content">
                         <h3 class="project-title">AI-Powered Social Media Platform</h3>
                         <p class="project-description">
-                            Advanced social media platform with AI-powered content recommendations, sentiment analysis, 
-                            and automated moderation. Features real-time chat, multimedia sharing, and intelligent feed algorithms.
+                            Advanced social media platform with AI-powered content recommendations and sentiment analysis.
                         </p>
                         <div class="project-tech">
                             <span class="tech-tag"><i class="fab fa-react"></i> React</span>
                             <span class="tech-tag"><i class="fab fa-node-js"></i> Node.js</span>
                             <span class="tech-tag"><i class="fas fa-database"></i> MongoDB</span>
-                            <span class="tech-tag"><i class="fas fa-brain"></i> TensorFlow.js</span>
                         </div>
                         <div class="project-links">
                             <a href="https://github.com/saif-islam-rayhan/AI-Powered-Social-Media-Platform" target="_blank" class="project-link">
-                                <i class="fab fa-github"></i> View Code
+                                <i class="fab fa-github"></i> Code
                             </a>
                             <a href="#" class="project-link">
-                                <i class="fas fa-external-link-alt"></i> Live Demo
+                                <i class="fas fa-external-link-alt"></i> Demo
                             </a>
                         </div>
                     </div>
@@ -1337,21 +1415,19 @@
                     <div class="project-content">
                         <h3 class="project-title">Hospital Management System</h3>
                         <p class="project-description">
-                            Comprehensive hospital management system with patient records, appointment scheduling, 
-                            billing, inventory management, and staff coordination. Built with scalability and security in mind.
+                            Comprehensive hospital management system with patient records, appointment scheduling, and billing.
                         </p>
                         <div class="project-tech">
                             <span class="tech-tag"><i class="fab fa-js"></i> JavaScript</span>
                             <span class="tech-tag"><i class="fab fa-node-js"></i> Express.js</span>
                             <span class="tech-tag"><i class="fas fa-database"></i> MySQL</span>
-                            <span class="tech-tag"><i class="fas fa-shield-alt"></i> JWT Auth</span>
                         </div>
                         <div class="project-links">
                             <a href="https://github.com/saif-islam-rayhan/Hospital-Management-System-" target="_blank" class="project-link">
-                                <i class="fab fa-github"></i> View Code
+                                <i class="fab fa-github"></i> Code
                             </a>
                             <a href="#" class="project-link">
-                                <i class="fas fa-external-link-alt"></i> Live Demo
+                                <i class="fas fa-external-link-alt"></i> Demo
                             </a>
                         </div>
                     </div>
@@ -1368,21 +1444,19 @@
                     <div class="project-content">
                         <h3 class="project-title">Heart Disease Prediction API</h3>
                         <p class="project-description">
-                            FastAPI-based machine learning API that predicts heart disease risk with high accuracy. 
-                            Features comprehensive documentation, rate limiting, and deployed on cloud for real-time predictions.
+                            FastAPI-based machine learning API that predicts heart disease risk with high accuracy.
                         </p>
                         <div class="project-tech">
                             <span class="tech-tag"><i class="fab fa-python"></i> Python</span>
                             <span class="tech-tag"><i class="fas fa-bolt"></i> FastAPI</span>
                             <span class="tech-tag"><i class="fas fa-chart-line"></i> Scikit-learn</span>
-                            <span class="tech-tag"><i class="fas fa-cloud"></i> Render</span>
                         </div>
                         <div class="project-links">
                             <a href="https://github.com/saif-islam-rayhan/heart_disease_fastapi" target="_blank" class="project-link">
-                                <i class="fab fa-github"></i> View Code
+                                <i class="fab fa-github"></i> Code
                             </a>
                             <a href="https://heart-disease-fastapi-w3r5.onrender.com/docs" target="_blank" class="project-link">
-                                <i class="fas fa-external-link-alt"></i> Live API
+                                <i class="fas fa-external-link-alt"></i> API
                             </a>
                         </div>
                     </div>
@@ -1399,21 +1473,19 @@
                     <div class="project-content">
                         <h3 class="project-title">Rayhan's AI Assistant</h3>
                         <p class="project-description">
-                            Intelligent personal assistant with voice recognition, natural language processing, 
-                            and task automation capabilities. Performs complex tasks through conversational AI.
+                            Intelligent personal assistant with voice recognition, natural language processing, and task automation.
                         </p>
                         <div class="project-tech">
                             <span class="tech-tag"><i class="fab fa-python"></i> Python</span>
                             <span class="tech-tag"><i class="fas fa-microphone"></i> SpeechRecognition</span>
                             <span class="tech-tag"><i class="fas fa-language"></i> NLP</span>
-                            <span class="tech-tag"><i class="fas fa-cogs"></i> Automation</span>
                         </div>
                         <div class="project-links">
                             <a href="https://github.com/saif-islam-rayhan/Rayhan-s-AI-Assistant" target="_blank" class="project-link">
-                                <i class="fab fa-github"></i> View Code
+                                <i class="fab fa-github"></i> Code
                             </a>
                             <a href="https://www.youtube.com/watch?v=LFvKDmnUR3g" target="_blank" class="project-link">
-                                <i class="fab fa-youtube"></i> Live Demo
+                                <i class="fab fa-youtube"></i> Demo
                             </a>
                         </div>
                     </div>
@@ -1741,7 +1813,7 @@
             </div>
             
             <div class="copyright">
-                <p>&copy; 2023 Md. Rayhan. All rights reserved. | AI & Software Engineer</p>
+                <p>&copy; 2023 Md.Rayhan. All rights reserved. | AI & Software Engineer</p>
             </div>
         </div>
     </footer>
@@ -1953,7 +2025,7 @@ UID:${Date.now()}@rayhan.dev
 DTSTAMP:${new Date().toISOString().replace(/[-:]/g, '').split('.')[0]}Z
 DTSTART:20260116T190000
 DTEND:20260116T193000
-SUMMARY:Meeting with Saif Islam Rayhan
+SUMMARY:Meeting with Md.Rayhan
 DESCRIPTION:AI/Software Consultation Meeting
 LOCATION:Online Meeting (Zoom/Google Meet)
 END:VEVENT
@@ -2027,16 +2099,22 @@ END:VCALENDAR`;
                         behavior: 'smooth'
                     });
                 }
+                
+                // Close mobile menu if open
+                if (window.innerWidth <= 992) {
+                    navLinks.classList.remove('active');
+                    mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                }
             });
         });
         
         // Mobile Menu
-        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-        const navLinks = document.querySelector('.nav-links');
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.getElementById('navLinks');
         
         mobileMenuBtn.addEventListener('click', () => {
-            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
-            mobileMenuBtn.innerHTML = navLinks.style.display === 'flex' 
+            navLinks.classList.toggle('active');
+            mobileMenuBtn.innerHTML = navLinks.classList.contains('active') 
                 ? '<i class="fas fa-times"></i>' 
                 : '<i class="fas fa-bars"></i>';
         });
@@ -2044,7 +2122,7 @@ END:VCALENDAR`;
         // Close mobile menu on link click
         document.querySelectorAll('.nav-links a').forEach(link => {
             link.addEventListener('click', () => {
-                navLinks.style.display = 'none';
+                navLinks.classList.remove('active');
                 mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
             });
         });
@@ -2068,6 +2146,22 @@ END:VCALENDAR`;
                 if (link.getAttribute('href') === `#${current}`) {
                     link.classList.add('active');
                 }
+            });
+            
+            // Show/hide back to top button
+            const backToTopBtn = document.getElementById('backToTop');
+            if (window.scrollY > 300) {
+                backToTopBtn.classList.add('visible');
+            } else {
+                backToTopBtn.classList.remove('visible');
+            }
+        });
+        
+        // Back to Top Functionality
+        document.getElementById('backToTop').addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
             });
         });
         
